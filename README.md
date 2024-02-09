@@ -8,6 +8,8 @@ This is a personal blog project.
 - **Gatsby**: A static site generator that uses React for building fast websites and apps.
 - **HTML**: The standard markup language for creating web pages.
 - **CSS**: The style sheet language used for styling web pages.
+- **GraphQL**: A query language for APIs and a runtime for executing those queries.
+
 
 ## Prerequisites
 
