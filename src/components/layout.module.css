@@ -39,7 +39,7 @@ a{
   max-width: 600px;
   /* height: 100vh; */
   box-sizing: border-box;
-  /* margin-bottom: 20px; */
+  margin-bottom: 20px;
 }
 
 .navbar{
