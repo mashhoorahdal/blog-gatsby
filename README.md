@@ -1,7 +1,7 @@
 # Blog
 
 This is a personal blog project.
-### Live Preview => [Check here](https://mashhoorblog.vercel.app){:target="_blank"}
+### Live Preview => <a href="https://mashhoorblog.vercel.app" target="blank">Check </a>
 
 ## Tech Stack
 
