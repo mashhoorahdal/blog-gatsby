@@ -1,7 +1,15 @@
 ---
-title: "Another Post"
-date: "2021-07-24"
-slug: "post-2"
+title: "Understanding Power of Two in Python"
+date: "2024-02-19"
+slug: "is-power-of-two"
 ---
 
-Here's another post! It's even better than the first one!
+Understanding Power of Two in Python:
+
+In Python, determining whether a number is a power of two can be efficiently done using bitwise operations. Here's a Python solution to check if a number is a power of two:
+
+```python
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        return n > 0 and ((n & (n - 1)) == 0)
+```

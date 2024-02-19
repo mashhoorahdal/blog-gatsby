@@ -38,9 +38,7 @@ a{
   max-width: 600px;
   height: 100vh;
   box-sizing: border-box;
-
 }
-
 
 .navbar{
   background-color: var(--navbar-container-color);

@@ -2,6 +2,8 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/Seo'
 import {about} from '../global.module.css'
+import Footer from '../components/Footer'
+
 const AboutPage = () => {
   return (
   <>
@@ -17,8 +19,9 @@ const AboutPage = () => {
 
 
     </div>
-  
+    
     </Layout>
+    <Footer/>
   </>
   )
 }

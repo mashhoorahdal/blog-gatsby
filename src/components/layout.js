@@ -8,7 +8,6 @@ import {
   logo,
   navbar,
 } from "./layout.module.css";
-import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -38,7 +37,7 @@ const Layout = ({ children }) => {
         </ul>
       </nav>
       <main>{children}</main>
-      <Footer />
+      
     </div>
   );
 };

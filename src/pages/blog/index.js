@@ -3,9 +3,11 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/Seo'
 import {blogs_container, blogs_wrapper} from './index.module.css'
+import Footer from '../../components/Footer'
+
 const BlogPage = ({ data }) => {
   
-  return (
+  return (<>
     <Layout pageTitle="My Blog Posts">
       <div className={blogs_wrapper} >
       {
@@ -25,7 +27,10 @@ const BlogPage = ({ data }) => {
         ))
       }
        </div>
+    
     </Layout>
+    <Footer/>
+    </>
   )
 }
 
