@@ -79,7 +79,6 @@ main{
 main h1,h2,h3{
 display: flex;
 justify-content: center;
-
 font-family: 'system-ui',sans-serif;
 color: var(--text-100);
  
