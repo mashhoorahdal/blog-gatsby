@@ -1,7 +1,7 @@
 # Blog
 
 This is a personal blog project.
-### Live Preview => <a href="https://mashhoorblog.vercel.app">Check here </a>
+### Live Preview => <a href="https://mashhoorblog.vercel.app" target="_blank">Check here </a>
 ## Tech Stack
 
 - **React**: A JavaScript library for building user interfaces.
