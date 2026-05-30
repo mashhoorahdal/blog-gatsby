@@ -31,7 +31,7 @@ Before you start, ensure you have the following installed:
 1. Navigate to the project directory:
 
 ```shell
- cd blog
+ cd blog-gatby
 ```
 
 2. Install dependencies:
