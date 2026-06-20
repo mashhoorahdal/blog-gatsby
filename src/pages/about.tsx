@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/Seo'
-import Footer from '../components/Footer'
 
 const STACK = [
   'Python', 'TypeScript', 'Django', 'DRF', 'GraphQL', 'FastAPI',
@@ -42,8 +41,7 @@ const LINKS = [
 
 const AboutPage = () => {
   return (
-    <>
-      <Layout pageTitle="About">
+    <Layout pageTitle="About">
         <div className="space-y-10">
           <div>
             <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-1">
@@ -174,9 +172,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </Layout>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 

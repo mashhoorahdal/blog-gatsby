@@ -2,12 +2,10 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/Seo'
-import Footer from '../../components/Footer'
 
 const BlogPost = ({ data, children }) => {
   return (
-    <>
-      <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout pageTitle={data.mdx.frontmatter.title}>
         <article>
           <header className="mb-10">
             <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-3">
@@ -21,9 +19,7 @@ const BlogPost = ({ data, children }) => {
             {children}
           </div>
         </article>
-      </Layout>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 

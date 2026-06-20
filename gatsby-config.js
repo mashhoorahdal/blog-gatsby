@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://mashhoorblog.vercel.app`,
-    title:'MA.',
+    title: 'Mashhoor Ahdal',
   },
 
 
@@ -27,8 +27,8 @@ module.exports = {
       {
         resolve: `gatsby-plugin-manifest`,
         options: {
-          name: "MA.",
-          short_name: "MA.",
+          name: "Mashhoor Ahdal",
+          short_name: "Mashhoor",
           start_url: "/",
           display: "standalone",
           icon: "src/images/logo.png", // This path is relative to the root of the site.

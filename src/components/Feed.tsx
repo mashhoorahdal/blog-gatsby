@@ -138,7 +138,7 @@ const Feed = ({ posts }: FeedProps) => {
       {/* floating minimal nav */}
       <div className="absolute top-0 inset-x-0 z-30 flex items-center justify-between px-6 h-14">
         <Link to="/" className="font-bold text-lg tracking-tight text-white/90 hover:text-white">
-          MA.
+          Mashhoor Ahdal
         </Link>
         <Link
           to="/blog"

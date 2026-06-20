@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import Footer from './Footer'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -24,14 +25,14 @@ const Layout = ({ children }: LayoutProps) => {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 font-sans">
+    <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 font-sans">
       <nav className="sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link
             to="/"
             className="font-bold text-lg tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
           >
-            MA.
+            Mashhoor Ahdal
           </Link>
           <div className="flex items-center gap-6">
             <Link
@@ -72,9 +73,10 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </nav>
-      <main className="max-w-3xl mx-auto px-6 py-12">
+      <main className="flex-1 w-full max-w-3xl mx-auto px-6 py-12">
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
