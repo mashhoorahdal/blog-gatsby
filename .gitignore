@@ -1,3 +1,8 @@
 node_modules/
 .cache/
 public
+
+# local tooling
+.claude/
+.agents/
+skills-lock.json
