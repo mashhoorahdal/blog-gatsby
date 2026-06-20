@@ -2,7 +2,6 @@ import * as React from 'react'
 import { Link, graphql, PageProps } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/Seo'
-import Footer from '../../components/Footer'
 
 type BlogData = {
   allMdx: {
@@ -20,10 +19,9 @@ type BlogData = {
 
 const BlogPage = ({ data }: PageProps<BlogData>) => {
   return (
-    <>
-      <Layout pageTitle="Writing">
+    <Layout pageTitle="Writing">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-10">
+          <h1 className="text-3xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 mb-10">
             Writing
           </h1>
           <div>
@@ -31,14 +29,14 @@ const BlogPage = ({ data }: PageProps<BlogData>) => {
               <Link
                 key={node.id}
                 to={`/blog/${node.frontmatter.slug}`}
-                className="group flex items-start justify-between py-4 border-b border-zinc-100 dark:border-zinc-800 last:border-0 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
+                className="group flex items-start justify-between py-5 border-b border-zinc-100 dark:border-zinc-800 last:border-0 hover:border-zinc-200 dark:hover:border-zinc-700 transition-colors"
               >
                 <div>
-                  <p className="font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  <p className="font-medium text-zinc-700 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                     {node.frontmatter.title}
                   </p>
                   {node.excerpt && (
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">
                       {node.excerpt}
                     </p>
                   )}
@@ -50,9 +48,7 @@ const BlogPage = ({ data }: PageProps<BlogData>) => {
             ))}
           </div>
         </div>
-      </Layout>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 
