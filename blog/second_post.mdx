@@ -5,12 +5,82 @@ slug: "is-power-of-two"
 hook: "n & (n-1) == 0 — one line, no loops, no division. How does it know?"
 ---
 
-Understanding Power of Two in Python:
-
-In Python, determining whether a number is a power of two can be efficiently done using bitwise operations. Here's a Python solution to check if a number is a power of two:
+A power of two is any number you get by multiplying 2 by itself: 1, 2, 4, 8, 16, 32, and so on. The obvious way to check is to keep dividing by 2 and see if you ever land on something that isn't even. That works, but there's a one-liner that does it without a single loop:
 
 ```python
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
         return n > 0 and ((n & (n - 1)) == 0)
 ```
+
+The first time I saw `n & (n - 1)` I had no idea why it worked. It looks like a magic trick. It isn't. Once you look at the numbers in binary, the whole thing falls apart in your hands.
+
+## The clue is in the binary
+
+Write a few powers of two in binary:
+
+```
+1   = 0001
+2   = 0010
+4   = 0100
+8   = 1000
+16  = 10000
+```
+
+Every power of two has exactly one bit set to 1, and the rest are zeros. That's not a coincidence. It's the definition of base-2. So the real question the function asks is simpler than "is this a power of two?" It's: **does this number have exactly one bit turned on?**
+
+Now compare a power of two with something that isn't:
+
+```
+8  = 1000   (one bit on  -> power of two)
+6  = 0110   (two bits on -> not a power of two)
+```
+
+If we can count the 1-bits, we're done. But we don't even need to count. There's a faster way.
+
+## What subtracting 1 does
+
+Here's the part that makes the trick click. When you subtract 1 from a number in binary, it flips the lowest 1-bit to 0 and turns every 0 below it into 1.
+
+Take 8:
+
+```
+  8 = 1000
+  7 = 0111
+```
+
+The single 1 became 0, and the three zeros after it became ones. That's just how borrowing works in subtraction, the same as `1000 - 1 = 0999` in regular decimal, except base-2.
+
+So for a power of two, `n` and `n - 1` share no 1-bits at all. One has the high bit, the other has everything below it. No overlap.
+
+## Now the AND
+
+The `&` operator compares two numbers bit by bit and keeps a 1 only where **both** numbers have a 1.
+
+For a power of two there's no overlap, so the AND wipes everything to zero:
+
+```
+  n     = 1000   (8)
+  n - 1 = 0111   (7)
+  -----------------
+  &       0000   -> 0
+```
+
+For a number that isn't a power of two, there's more than one bit on, and subtracting 1 only clears the lowest one. The other bits survive, so the AND leaves something behind:
+
+```
+  n     = 0110   (6)
+  n - 1 = 0101   (5)
+  -----------------
+  &       0100   -> 4, not zero
+```
+
+That's the whole idea. `n & (n - 1) == 0` is true only when clearing the lowest 1-bit leaves nothing, which can only happen when there was exactly one bit to begin with.
+
+## Why the `n > 0` guard
+
+Zero is `0000`. It has no bits on, so `0 & (0 - 1)` also comes out to 0 and would sneak through as a false positive. Negative numbers misbehave too, because Python stores them with the sign baked into the bits. The `n > 0` check throws both cases out before the clever part runs.
+
+## Why bother
+
+For one check it makes no real difference. But this runs in a fixed number of steps no matter how big `n` gets, while the divide-by-2 loop takes longer for bigger numbers. The same `n & (n - 1)` trick also shows up when you want to clear the lowest set bit on purpose, or count how many bits are on (keep applying it until you hit zero, count the rounds). Worth keeping in your back pocket.
